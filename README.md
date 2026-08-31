@@ -11,7 +11,7 @@ The project also provides visual anomaly localization through heatmaps and an in
 ## 🚀 Live Demo
 
 **Streamlit App:**  
-[Launch Industrial Defect Detection](YOUR_STREAMLIT_APP_URL)
+[Launch Industrial Defect Detection]([YOUR_STREAMLIT_APP_URL](https://industrial-defect-detection-s38f4vjmmver3tsrbkifjb.streamlit.app))
 
 > Replace `YOUR_STREAMLIT_APP_URL` with your deployed Streamlit URL.
 
