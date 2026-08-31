@@ -155,14 +155,22 @@ def load_category_metrics(metrics_dir_str: str, category: str) -> dict | None:
 
 
 def usable_categories(config: dict) -> list[str]:
-    """Categories that have BOTH a memory bank and a threshold — ready for inspection."""
+    """Categories with both a memory bank and threshold ready for inspection."""
+
     models_dir = Path(config["output"]["models_dir"])
-    dataset_root = Path(config["dataset"]["root_path"])
-    discovered = discover_categories(dataset_root) if dataset_root.exists() else []
+
+    if not models_dir.exists():
+        return []
+
     ready = []
-    for cat in discovered:
-        if (models_dir / f"{cat}_memory_bank.pt").exists() and (models_dir / f"{cat}_threshold.json").exists():
-            ready.append(cat)
+
+    for memory_bank_path in sorted(models_dir.glob("*_memory_bank.pt")):
+        category = memory_bank_path.name.removesuffix("_memory_bank.pt")
+        threshold_path = models_dir / f"{category}_threshold.json"
+
+        if threshold_path.exists():
+            ready.append(category)
+
     return ready
 
 
