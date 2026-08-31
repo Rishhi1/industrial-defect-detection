@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+venv/
+env/
+.venv/
+
+# Dataset (large, downloaded manually — not committed)
+data/mvtec_anomaly_detection/*
+!data/mvtec_anomaly_detection/.gitkeep
+
+# Saved models / memory banks (regenerable, often large)
+models/*
+!models/.gitkeep
+
+# Results (regenerable)
+results/plots/*
+results/predictions/*
+results/metrics/*
+!results/plots/.gitkeep
+!results/predictions/.gitkeep
+!results/metrics/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/
