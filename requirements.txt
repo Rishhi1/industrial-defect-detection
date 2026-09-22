@@ -20,8 +20,6 @@ seaborn>=0.12.0
 
 # Web application
 streamlit>=1.28.0
-fastapi
-python-multipart
 
 # Config + progress
 PyYAML>=6.0
